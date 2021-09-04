@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "core-util-is": "^1.0.2",
+    "discord.js": "^12.5.1"
+  }
+}

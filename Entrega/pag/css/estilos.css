@@ -1,0 +1,26 @@
+img {
+    width: 120px;
+    height: auto;
+    display: block;
+    margin: 70px auto;
+
+}
+
+#titulo{
+    text-align: center;
+    font-size: 25px;
+    font-family: Arial; 
+    
+}
+
+.form{
+
+   text-align: center;
+  
+
+}
+.boton{
+    width:200px;
+     height:30px;
+     background: #2980b9;
+}

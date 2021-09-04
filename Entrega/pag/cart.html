@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <!-- <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>-->
+
+    </div>
+
+  </nav>
+
+
+  <h2 id="tituloCarrito">Carrito de compras</h2>
+  <br>
+  <h4 id="subtituloCarrito">Articulos a comprar </h4>
+  <br>
+  <table style="width:50%" id="tabla">
+    <tr>
+      <th>Producto</th>
+      <th>Costo</th>
+      <th>Unidades</th>
+      <th>Costo</th>
+      <th>Subtotal</th>
+
+    </tr>
+
+  </table>
+  <hr color="#2c3e50" size=1 width="900">
+  <br>
+
+  <div id="val"></div>
+
+
+  <div id="spinner-wrapper"> </div>
+  <div id="jojo"></div>
+  <br><br>
+
+  <!-- Tipo de envio y % -->
+
+  <hr color="#2c3e50" size=1 width="900">
+  <div id="gold">
+
+
+    <br>
+    <h5>Tipo de envio</h5>
+    <div class="d-block my-3">
+      <div class="custom-control custom-radio">
+        <input id="goldradio" name="publicationType" type="radio" class="custom-control-input" checked="" required="">
+        <label class="custom-control-label" for="goldradio">Gold (13%)</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="premiumradio" name="publicationType" type="radio" class="custom-control-input" required="">
+        <label class="custom-control-label" for="premiumradio">Premium (7%)</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input id="standardradio" name="publicationType" type="radio" class="custom-control-input" required="">
+        <label class="custom-control-label" for="standardradio" id="estandar">Estándar (3%)</label>
+      </div>
+    </div>
+  </div>
+
+
+  <br>
+
+  <!-- Datos/ Direccion-->
+
+  <hr color="#2c3e50" size=1 width="900">
+
+  <div class="enviar">
+    <h5>Direccion de envio</h5>
+    <br>
+    <form class="needs-validation" novalidate>
+      <div id="ty" class="form-row">
+        <div class="col-md-4 mb-3 md-form">
+          <label for="validationCustom012">Calle</label>
+          <input type="text" class="form-control" id="validationCustom012" placeholder="" value="" required>
+          <div class="valid-feedback">
+            Completo!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 md-form">
+          <label for="validationCustom022">Esquina</label>
+          <input type="text" class="form-control" id="validationCustom022" value="" required>
+          <div class="valid-feedback">
+            Completo!
+          </div>
+        </div>
+        <div class="col-md-4 mb-3 md-form">
+          <label for="validationCustomUsername2">Numero</label>
+          <input style="width: 100px;" type="text" class="form-control" id="validationCustomUsername2"
+            aria-describedby="inputGroupPrepend2" required>
+          <div class="invalid-feedback">
+            Por favor ingrese el numero
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  <br><br>
+
+  <!--Tabla con precio x producto, segun el tipo de envio y el total de la compra-->
+
+  <hr color="#2c3e50" size=1 width="900">
+  <div class="enviar"></div>
+  <div id="tabla">
+
+    <h4 class="mb-3">Costos</h4>
+    <ul class="list-group mb-3">
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+          <h6 class="my-0">Precio</h6>
+          <small class="text-muted">Unitario del producto</small>
+        </div>
+        <span class="text-muted" id="productCostText">-</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between lh-condensed">
+        <div>
+          <h6 class="my-0">Porcentaje</h6>
+          <small class="text-muted" id="">Según el tipo de publicación</small>
+        </div>
+        <span class="text-muted" id="comissionText">-</span>
+      </li>
+      <li class="list-group-item d-flex justify-content-between">
+        <span>Total ($)</span>
+        <strong id="totalCostText">-</strong>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Botones de selec. forma de pago y finalizar compra-->
+
+  <hr color="#2c3e50" size=1 width="900">
+  <br><br>
+  <div id="enviardos">
+
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal"
+      data-whatever="@fat">Seleccionar form. de pago</button> &nbsp
+    <button class="btn btn-primary btn-sm btn-rounded" type="submit" id="subm" style="width: 200px;padding: 8px;"
+      onclick=validacion()>Finalizar </button>
+    <br><br>
+    <a href="home.html" id="volver">Volver al inicio</a>
+
+
+
+    <!-- Modal-->
+
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true"
+      style="background-color: #e67e22;">
+      <div class="modal-dialog">
+        <div class="modal-content" id="invi">
+          <div class="modal-header" style="background-color: #f5cd79;">
+            <h5 class="modal-title" id="exampleModalLabel">Forma de pago</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+
+
+          <div id="formTar">
+            <div class="form-check">
+
+              <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                aria-label="..." required>
+              <label class="form-check-label" for="exampleRadios1">
+                Tarjeta
+              </label>
+            </div>
+
+            <br>
+            <select id="inputState" class="form-control">
+              <option selected>Elegir</option>
+              <option>Mastercard</option>
+              <option>Visa</option>
+              <option>Oca Card</option>
+              <option>Otra</option>
+            </select>
+
+            <hr style="width: 400px;">
+
+            <form>
+              <div class="row">
+                <div class="col">
+                  <input type="" class="form-control" placeholder="Numero de tarjeta" style="width: 300px" required>
+                  <small id="passwordHelpInline" class="text-muted">
+                    Debe tener entre 8 y 20 caracteres
+                  </small>
+                </div>
+
+                <br><br><br>
+
+                <div class="col">
+                  <input type="password" class="form-control" style="width: 100px;" required>
+                  <small id="passwordHelpInline" class="text-muted">
+                    Codigo de seguridad
+                  </small>
+
+                </div>
+
+
+
+
+                <div>
+
+                  <form action="" method="POST" class="form-row mb-4">
+                    <div class="col">
+                      <label for="fecha"></label>
+                      <input type="month" name="fecha" id="fecha" class="form-control" min="2020-10" value="2032-08"
+                        style="width: 300px" required>
+                      <small id="passwordHelpInline" class="text-muted">
+                        Fecha de venc.
+                      </small>
+                    </div>
+                  </form>
+
+                </div>
+
+                <hr style="width: 400px;">
+
+                <div class="form-check">
+                  <input class="form-check-input position-static" type="checkbox" id="blankCheckbox" value="option1"
+                    aria-label="...">
+                  <label class="form-check-label" for="exampleRadios1">
+                    Transferencia Bancaria
+                  </label>
+                </div>
+                <br>
+                <div class="col">
+                  <input type="text" class="form-control" placeholder="Numero de cuenta" style="width: 300px" required>
+                  <br><br>
+                </div>
+                <div class="modal-footer">
+                  <button> <a class="dropdown-item" data-dismiss="modal" id="cerr">Cerrar</a></button>
+                  <button> <a class="dropdown-item" data-dismiss="modal" id="seguro">Enviar</a></button>
+
+                </div>
+            </form>
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+
+
+
+
+
+  <div class="lds-ring">
+    <div></div>
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>
+
+
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/cart.js"></script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head id="header">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+
+  <style>
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
+      }
+    }
+  </style>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/dropzone.css" rel="stylesheet">
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="home.html">Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html">Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html">Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html">Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html">Mi carrito</a>
+    </div>
+  </nav>
+
+  <header id="content">
+    <div>
+      <img id="avatar" src="img/avatar.jpg" />
+      <h1 class="userName"> Marco De Luca </h1>
+    </div>
+    <ul id="lista">
+      <li style="background-image: url(img/ecomer1_files/gmail.png);" class="icono"></li>
+      <li>
+        <a href="https://www.gmail.com">Correo</a>
+      </li>
+      <li>
+      <li style="background-image: url(img/ecomer1_files/facebook.png);" class="icono"></li>
+      <a href="https://www.facebook.com">Facebook</a>
+      </li>
+      <li>
+      <li style="background-image: url(img/ecomer1_files/twitter.png);" class="icono"></li>
+      <a href="https://www.twitter.com">Twitter</a>
+      </li>
+    </ul>
+    <div>
+      <h3 class="userName">Datos Personales</h3>
+    </div>
+
+    <br>
+    <form id="datosPersonales">
+      <ul>
+        <li>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">Nombre</label>
+              <input type="text" class="form-control mb-2" id="name" placeholder="Nombre">
+            </div>
+        </li>
+
+        <li>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">Apellido</label>
+              <input type="text" class="form-control mb-2" id="apellido" placeholder="Apellido">
+            </div> <br>
+        </li>
+        <li>
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">Telefono</label>
+              <input type="text" class="form-control mb-2" id="tel" placeholder="Telefono">
+            </div>
+        </li>
+
+        <li>
+
+          <div class="form-row align-items-center">
+            <div class="col-auto">
+              <label class="sr-only" for="inlineFormInput">Edad</label>
+              <input type="text" class="form-control mb-2" id="edad" placeholder="Edad">
+            </div>
+
+            <div class="col-auto">
+              <button type="submit" class="btn btn-primary mb-2" id="cambios"> Guardar cambios</button>
+            </div>
+
+        </li>
+
+      </ul>
+
+
+    </form>
+
+  </header>
+
+
+
+  <footer class="text-muted bg-light">
+    <div class="container">
+      <p>Este sitio forma parte de Desarrollo Web - JAP - 2020</p>
+      <p>Clickea <a target="_blank" href="Letra.pdf">aquí</a> para descargar la letra del obligatorio.</p>
+    </div>
+  </footer>
+  <div class="alert fade alert-success" role="alert" id="alertResult">
+    <span id="resultSpan"></span>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/dropzone.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/my-profile.js"></script>
+</body>
+
+</html>
