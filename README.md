@@ -12,15 +12,16 @@ Instalacion del entorno - Node.js
    
    Abrir en el navegador http://localhost:3002/ .
    
-   Servidor Node.js 
-   
-  
-   const express = require('express');
+   ### Servidor Node.js 
+ 
+  ```
+const express = require('express');
 const app = express();
 app.use(express.static(__dirname + '/pag/'));
 app.listen('3002', function() {
   console.log('Servidor web escuchando en el puerto 3002');
 });
+```
 
 Para obtener mas informacion sobre Node.js, consulte los siguientes recursos :
 - https://nodejs.org/en/
